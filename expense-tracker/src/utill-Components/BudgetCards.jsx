@@ -1,9 +1,10 @@
 import React from 'react';
 
+
 export const BudgetCards = ({ title, budget }) => {
   return (
     <div className="card" style={{
-      width: '386px',
+      width: '100%',
       height: '167px',
       borderRadius: '24px',
       display: 'flex',
