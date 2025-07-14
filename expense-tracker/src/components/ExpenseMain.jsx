@@ -17,6 +17,9 @@ import {
   faMagnifyingGlass, faWallet, faPizzaSlice, faSuitcaseRolling, faHospital 
 } from '@fortawesome/free-solid-svg-icons';
 import { Chart } from './Chart';
+import { AddExpense } from './AddExpense';
+import { AddBudget } from './AddBudget';
+import { EditExpense } from './EditExpense';
 
 export const ExpenseMain = () => {
   const [budget, setBudget] = useState(0); 
@@ -98,7 +101,11 @@ export const ExpenseMain = () => {
                 borderRadius: '24px',
             }}>
                 <List />
+                
             </div>
+            {/* <AddExpense/>
+            <AddBudget/>
+            <EditExpense/> */}
 
 
         </div>
