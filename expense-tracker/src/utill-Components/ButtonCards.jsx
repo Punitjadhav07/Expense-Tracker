@@ -1,24 +1,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import '../css/ButtonCards.css';
 
-export const ButtonCards = ({ operation }) => {
+export const ButtonCards = ({ operation, onClick }) => {
   return (
-    <button style={{
-      width: "147px",
-      height: "48px",
-      borderRadius: "12px",
-      backgroundColor: "#5C6AFF",
-      color: "white",
-      fontSize: "16px",
-      fontWeight: "500",
-      border: "none",
-      cursor: "pointer",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: "8px"
-    }}>
+    <button
+      onClick={() => onClick(operation)}
+      className="buttonCards-btn"
+    >
       <FontAwesomeIcon icon={faPlus} />
       {operation}
     </button>

@@ -1,26 +1,18 @@
 import React from 'react'
+import '../css/Chart.css';
 
 export const Chart = () => {
   return (
     <>
-    <div className='mainContainer' style={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        width: '100%',
-        height: '100%',
-        
-        
-    }} >
-        <div className='leftContainer' style={{}}>
-            <div className='chartHeader' style={{}}>
+    <div className='mainContainer chart-mainContainer'>
+        <div className='leftContainer chart-leftContainer'>
+            <div className='chartHeader chart-chartHeader'>
                 <p>Expense Chart</p>
             </div>
             
         </div>
-        <div className='rightContainer' style={{}}>
-            <div className='chartHeader' style={{}}>
+        <div className='rightContainer chart-rightContainer'>
+            <div className='chartHeader chart-chartHeader'>
                 <p>Expense Tracker</p>
             </div>
         </div>

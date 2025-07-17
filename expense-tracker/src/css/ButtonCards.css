@@ -1,0 +1,15 @@
+.buttonCards-btn {
+  width: 147px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: #5C6AFF;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+} 

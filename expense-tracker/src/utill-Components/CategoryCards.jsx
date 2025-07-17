@@ -1,16 +1,9 @@
 import React from 'react'
+import '../css/CategoryCards.css';
 
 export const CategoryCards = ({ category }) => {
   return (
-    <button style={{
-        width:"147px",
-        height:"48px",
-        borderRadius:"12px",
-        fontSize:"16px",
-        fontWeight:"500",
-        border:"none",
-        cursor:"pointer",
-    }}>
+    <button className="categoryCards-btn">
       {category}
     </button>
   );

@@ -1,0 +1,14 @@
+.header-row {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 80px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 121px;
+  height: 28px;
+  width: 191px;
+} 

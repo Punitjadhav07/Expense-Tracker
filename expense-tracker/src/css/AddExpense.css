@@ -1,0 +1,61 @@
+.addExpense-mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 520px;
+  height: 524px;
+}
+
+.addExpense-addExpenseContainer {
+  width: 440px;
+  height: 476px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.addExpense-header {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
+  justify-content: space-between;
+}
+
+.addExpense-hr {
+  width: 100%;
+  border-top: 1px solid black;
+}
+
+.addExpense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.addExpense-formLabel {
+  font-size: 16px;
+}
+
+.addExpense-formInput {
+  width: 100%;
+  height: 51px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #8E8E93;
+  font-size: 16px;
+}
+
+.addExpense-submitButton {
+  width: 100%;
+  height: 48px;
+  background-color: #5C6AFF;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  color: white;
+  text-align: left;
+  padding: 10px;
+} 
