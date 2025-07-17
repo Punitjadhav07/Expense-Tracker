@@ -56,3 +56,14 @@
   border: 2px solid #B5B5B5;
   border-radius: 24px;
 } 
+/* .ModalContainerAddBudget {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  align-items: center;
+} */

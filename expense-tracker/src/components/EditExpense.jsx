@@ -38,9 +38,7 @@ export const EditExpense = () => {
             type="text"
             placeholder="Amount"
           />
-          <button className="submitButton editExpense-submitButton">
-            <FontAwesomeIcon icon={faPlus} />Add Expense
-          </button>
+          
         </div>
       </div>
     </div>
