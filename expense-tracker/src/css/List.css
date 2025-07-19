@@ -59,8 +59,10 @@
 }
 
 .list-editButton {
+  width: 103px;
+  height: 42px;
+  background-color: #F2F3FF;
   margin-right: 10px;
-  background: #B5B5B5;
   border: none;
   border-radius: 6px;
   padding: 6px 12px;
@@ -68,7 +70,9 @@
 }
 
 .list-deleteButton {
-  background: #FFE1E1;
+    width: 103px;
+  height: 42px;
+  background-color: #FFE1E1;
   border: none;
   border-radius: 6px;
   padding: 6px 12px;

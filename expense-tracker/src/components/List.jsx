@@ -1,7 +1,46 @@
+
+
+
+// import React from 'react';
+// import '../css/List.css';
+
+// export const List = ({ expenses, onEdit }) => {
+//   return (
+//     <div>
+//       {/* Header */}
+//       <div className="list list-header">
+//         <div className="srNo list-srNo"><p>Sr.</p></div>
+//         <div className="expenseName list-expenseName"><p>Expense</p></div>
+//         <div className="amount list-amount"><p>Amount</p></div>
+//         <div className="expenseOperation list-expenseOperation"><p>Edit/Delete</p></div>
+//       </div>
+
+//       {/* Expense List */}
+//       {expenses.map((item, index) => (
+//         <div key={index} className="list-row">
+//           <div className="list-row-srNo">{index + 1}</div>
+//           <div className="list-row-expenseName">{item.title}</div> 
+//           <div className="list-row-amount">₹{item.amount}</div>
+//           <div className="list-row-expenseOperation">
+//             <button
+//               className="list-editButton"
+//               onClick={() => onEdit(item, index)} // ⬅️ Pass expense and index to parent
+//             >
+//               Edit
+//             </button>
+//             <button className="list-deleteButton">Delete</button>
+//           </div>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// };
+
+
 import React from 'react';
 import '../css/List.css';
 
-export const List = ({ expenses }) => {
+export const List = ({ expenses, onEdit, onDelete }) => {
   return (
     <div>
       {/* Header */}
@@ -16,11 +55,21 @@ export const List = ({ expenses }) => {
       {expenses.map((item, index) => (
         <div key={index} className="list-row">
           <div className="list-row-srNo">{index + 1}</div>
-          <div className="list-row-expenseName">{item.title}</div> {/* 🔧 fixed this */}
+          <div className="list-row-expenseName">{item.title}</div> 
           <div className="list-row-amount">₹{item.amount}</div>
           <div className="list-row-expenseOperation">
-            <button className="list-editButton">Edit</button>
-            <button className="list-deleteButton">Delete</button>
+            <button
+              className="list-editButton"
+              onClick={() => onEdit(item, index)}
+            >
+              Edit
+            </button>
+            <button
+              className="list-deleteButton"
+              onClick={() => onDelete(index)}
+            >
+              Delete
+            </button>
           </div>
         </div>
       ))}

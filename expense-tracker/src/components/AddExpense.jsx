@@ -11,7 +11,7 @@ export const AddExpense = ({ onClose, onAddExpense }) => {
 
   const handleSubmit = () => {
     const newExpense = {
-      name: expenseName,
+      title: expenseName,
       date: expenseDate,
       category: expenseCategory,
       amount: parseFloat(expenseAmount),
