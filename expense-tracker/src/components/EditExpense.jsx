@@ -65,13 +65,28 @@ export const EditExpense = ({ expense, onClose, onSave }) => {
           />
 
           <p className="formLabel editExpense-formLabel">Expense Category</p>
-          <input
+          <select
             className="formInput editExpense-formInput"
-            type="text"
-            placeholder="Category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-          />
+            required
+          >
+            <option value="" disabled>
+              Choose Category
+            </option>
+            <option value="Food & Drink">
+              Food & Drink
+            </option>
+            <option value="Groceries">
+              Groceries
+            </option>
+            <option value="Travel">
+              Travel
+            </option>
+            <option value="Health">
+              Health
+            </option>
+          </select>
 
           <p className="formLabel editExpense-formLabel">Expense Amount</p>
           <input
