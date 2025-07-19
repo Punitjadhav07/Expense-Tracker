@@ -61,6 +61,7 @@ export const AddExpense = ({ onClose, onAddExpense }) => {
           >
             <option value="">Choose Category</option>
             <option value="Food & Drinks">Food & Drinks</option>
+            <option value="Groceries">Groceries</option>
             <option value="Travel">Travel</option>
             <option value="Health">Health</option>
           </select>
