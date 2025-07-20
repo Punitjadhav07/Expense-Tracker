@@ -1,20 +1,24 @@
+// AddBudget.jsx
+// Modal form for adding a new budget amount. Manages local form state and notifies parent on submit.
+// Calls onAddBudget to update the budget in ExpenseMain.
+
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
 import '../css/AddBudget.css';
 
 export const AddBudget = ({ onClose, onAddBudget }) => {
+  // Local form state for the budget amount
   const [amount, setAmount] = useState('');
 
+  // On submit, validate and call parent handler
   const handleAddBudget = () => {
     if (!amount || isNaN(amount)) {
       alert("Please enter a valid number.");
       return;
     }
-
-    onAddBudget(amount);
-    console.log("Budget added:", amount);
-    onClose();
+    onAddBudget(amount); // Notify parent to update budget state
+    onClose(); // Close modal
   };
 
   return (

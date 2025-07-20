@@ -1,41 +1,6 @@
-
-
-
-// import React from 'react';
-// import '../css/List.css';
-
-// export const List = ({ expenses, onEdit }) => {
-//   return (
-//     <div>
-//       {/* Header */}
-//       <div className="list list-header">
-//         <div className="srNo list-srNo"><p>Sr.</p></div>
-//         <div className="expenseName list-expenseName"><p>Expense</p></div>
-//         <div className="amount list-amount"><p>Amount</p></div>
-//         <div className="expenseOperation list-expenseOperation"><p>Edit/Delete</p></div>
-//       </div>
-
-//       {/* Expense List */}
-//       {expenses.map((item, index) => (
-//         <div key={index} className="list-row">
-//           <div className="list-row-srNo">{index + 1}</div>
-//           <div className="list-row-expenseName">{item.title}</div> 
-//           <div className="list-row-amount">₹{item.amount}</div>
-//           <div className="list-row-expenseOperation">
-//             <button
-//               className="list-editButton"
-//               onClick={() => onEdit(item, index)} // ⬅️ Pass expense and index to parent
-//             >
-//               Edit
-//             </button>
-//             <button className="list-deleteButton">Delete</button>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
+// List.jsx
+// Displays a table/list of expenses. Receives the current (filtered) expenses and update handlers as props from ExpenseMain.
+// Calls onEdit and onDelete to trigger parent state updates.
 
 import React from 'react';
 import '../css/List.css';
@@ -43,7 +8,7 @@ import '../css/List.css';
 export const List = ({ expenses, onEdit, onDelete }) => {
   return (
     <div>
-      {/* Header */}
+      {/* Table header */}
       <div className="list list-header">
         <div className="srNo list-srNo"><p>Sr.</p></div>
         <div className="expenseName list-expenseName"><p>Expense</p></div>
@@ -51,19 +16,21 @@ export const List = ({ expenses, onEdit, onDelete }) => {
         <div className="expenseOperation list-expenseOperation"><p>Edit/Delete</p></div>
       </div>
 
-      {/* Expense List */}
+      {/* Expense rows */}
       {expenses.map((item, index) => (
         <div key={index} className="list-row">
           <div className="list-row-srNo">{index + 1}</div>
           <div className="list-row-expenseName">{item.title}</div> 
           <div className="list-row-amount">₹{item.amount}</div>
           <div className="list-row-expenseOperation">
+            {/* Edit button triggers onEdit with the expense and its index */}
             <button
               className="list-editButton"
               onClick={() => onEdit(item, index)}
             >
               Edit
             </button>
+            {/* Delete button triggers onDelete with the index */}
             <button
               className="list-deleteButton"
               onClick={() => onDelete(index)}
