@@ -1,6 +1,4 @@
-// AddExpense.jsx
-// Modal form for adding a new expense. Manages local form state and notifies parent on submit.
-// Calls onAddExpense to update the main expense list in ExpenseMain.
+
 
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,13 +6,13 @@ import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
 import '../css/AddExpense.css';
 
 export const AddExpense = ({ onClose, onAddExpense }) => {
-  // Local form state for each field
+
   const [expenseName, setExpenseName] = useState('');
   const [expenseDate, setExpenseDate] = useState('');
   const [expenseCategory, setExpenseCategory] = useState('');
   const [expenseAmount, setExpenseAmount] = useState('');
 
-  // On submit, call parent handler and reset form
+
   const handleSubmit = () => {
     const newExpense = {
       title: expenseName,
@@ -22,12 +20,12 @@ export const AddExpense = ({ onClose, onAddExpense }) => {
       category: expenseCategory,
       amount: parseFloat(expenseAmount),
     };
-    onAddExpense(newExpense); // Notify parent to update state
+    onAddExpense(newExpense);
     setExpenseName('');
     setExpenseDate('');
     setExpenseCategory('');
     setExpenseAmount('');
-    onClose(); // Close modal
+    onClose(); 
   };
 
   return (
@@ -41,7 +39,7 @@ export const AddExpense = ({ onClose, onAddExpense }) => {
         </div>
         <hr className="addExpense-hr" />
         <div className="form addExpense-form">
-          {/* Form fields for each property */}
+          
           <p className="formLabel addExpense-formLabel">Expense Name</p>
           <input
             className="formInput addExpense-formInput"

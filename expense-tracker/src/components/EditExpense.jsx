@@ -1,6 +1,4 @@
-// EditExpense.jsx
-// Modal form for editing an existing expense. Loads data from props, manages local form state, and notifies parent on save.
-// Calls onSave to update the main expense list in ExpenseMain.
+
 
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,13 +6,12 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import '../css/EditExpense.css';
 
 export const EditExpense = ({ expense, onClose, onSave }) => {
-  // Local form state, initialized from props
+
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
 
-  // When expense prop changes, update local state
   useEffect(() => {
     if (expense) {
       setTitle(expense.title || '');
@@ -24,11 +21,11 @@ export const EditExpense = ({ expense, onClose, onSave }) => {
     }
   }, [expense]);
 
-  // On submit, call parent handler with updated expense
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const updatedExpense = { ...expense, title, date, category, amount };
-    onSave(updatedExpense); // Notify parent to update state
+    onSave(updatedExpense);
   };
 
   return (
@@ -42,7 +39,7 @@ export const EditExpense = ({ expense, onClose, onSave }) => {
         </div>
         <hr className="editExpense-hr" />
         <form className="form editExpense-form" onSubmit={handleSubmit}>
-          {/* Form fields for each property, pre-filled with current values */}
+      
           <p className="formLabel editExpense-formLabel">Expense Name</p>
           <input
             className="formInput editExpense-formInput"
