@@ -1,20 +1,27 @@
 .chart-mainContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   width: 100%;
   height: 100%;
 }
 
 .chart-leftContainer {
-  /* Add any specific styles if needed */
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .chart-rightContainer {
-  /* Add any specific styles if needed */
+ width: 50%;
 }
 
-.chart-chartHeader {
-  /* Add any specific styles if needed */
+.chart-chartHeader p{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
 } 

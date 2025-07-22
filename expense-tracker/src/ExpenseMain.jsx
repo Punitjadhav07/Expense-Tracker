@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { BudgetCards } from '../utill-Components/BudgetCards';
-import ButtonCards from '../utill-Components/ButtonCards';
-import { CategoryCards } from '../utill-Components/CategoryCards';
-import { List } from './List';
+
+import { BudgetCards } from './utill-Components/BudgetCards';
+import { ButtonCards } from './utill-Components/ButtonCards';
+import { CategoryCards } from './utill-Components/CategoryCards';
+
+import { List } from './components/List';
+import { Chart } from './components/Chart';
+import { AddExpense } from './components/AddExpense';
+import { AddBudget } from './components/AddBudget';
+import { EditExpense } from './components/EditExpense';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMagnifyingGlass, faWallet, faPizzaSlice,
   faSuitcaseRolling, faHospital, faBagShopping
 } from '@fortawesome/free-solid-svg-icons';
-import { Chart } from './Chart';
-import { AddExpense } from './AddExpense';
-import { AddBudget } from './AddBudget';
-import { EditExpense } from './EditExpense';
-import '../css/ExpenseMain.css';
+
+import './css/ExpenseMain.css';
 
 export const ExpenseMain = () => {
   const [showAddBudget, setShowAddBudget] = useState(false);
