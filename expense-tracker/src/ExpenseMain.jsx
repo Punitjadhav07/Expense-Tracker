@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+
 import { BudgetCards } from './utill-Components/BudgetCards';
 import { ButtonCards } from './utill-Components/ButtonCards';
 import { CategoryCards } from './utill-Components/CategoryCards';
@@ -19,6 +20,7 @@ import {
 import './css/ExpenseMain.css';
 
 export const ExpenseMain = () => {
+  // State variables to manage budget, expenses, and UI states
   const [showAddBudget, setShowAddBudget] = useState(false);
   const [showAddExpense, setShowAddExpense] = useState(false);
   const [showEditExpense, setShowEditExpense] = useState(false);
@@ -101,25 +103,22 @@ export const ExpenseMain = () => {
     setExpenseList(prev => prev.filter((_, idx) => idx !== indexToDelete));
   };
 
-  const categoryNames = [
-    'All Expenses',
-    'Food & Drinks',
-    'Groceries',
-    'Travel',
-    'Health'
-  ];
-  const categoryIcons = [
-    <><FontAwesomeIcon icon={faMagnifyingGlass} /> Search</>,
-    <><FontAwesomeIcon icon={faWallet} /> All Expenses</>,
-    <><FontAwesomeIcon icon={faPizzaSlice} /> Food & Drinks</>,
-    <><FontAwesomeIcon icon={faBagShopping} /> Groceries</>,
-    <><FontAwesomeIcon icon={faSuitcaseRolling} /> Travel</>,
-    <><FontAwesomeIcon icon={faHospital} /> Health</>
+  const categories = [
+    { name: 'Search', icon: <FontAwesomeIcon icon={faMagnifyingGlass} /> },
+    { name: 'All Expenses', icon: <FontAwesomeIcon icon={faWallet} /> },
+    { name: 'Food & Drinks', icon: <FontAwesomeIcon icon={faPizzaSlice} /> },
+    { name: 'Groceries', icon: <FontAwesomeIcon icon={faBagShopping} /> },
+    { name: 'Travel', icon: <FontAwesomeIcon icon={faSuitcaseRolling} /> },
+    { name: 'Health', icon: <FontAwesomeIcon icon={faHospital} /> },
   ];
 
-  const filteredExpenses = selectedCategory === 'All Expenses'
-    ? expenseList
-    : expenseList.filter(exp => exp.category === selectedCategory);
+  let filteredExpenses = [];
+
+  if (selectedCategory === 'All Expenses') {
+    filteredExpenses = expenseList;
+  } else {
+    filteredExpenses = expenseList.filter(exp => exp.category === selectedCategory);
+  }
 
   return (
     <div className="container expenseMain-container">
@@ -134,12 +133,12 @@ export const ExpenseMain = () => {
       </div>
 
       <div className="list expenseMain-list">
-        {categoryNames.map((cat, i) => (
+        {categories.map(({ name, icon }) => (
           <CategoryCards
-            key={cat}
-            category={categoryIcons[i]}
-            isSelected={selectedCategory === cat}
-            onClick={() => setSelectedCategory(cat)}
+            key={name}
+            category={<>{icon} {name}</>}
+            isSelected={selectedCategory === name}
+            onClick={() => setSelectedCategory(name)}
           />
         ))}
         <ButtonCards operation="Add Budget" onClick={handleOperationClick} />
