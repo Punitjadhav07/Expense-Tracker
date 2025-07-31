@@ -103,6 +103,8 @@ export const ExpenseMain = () => {
     setExpenseList(prev => prev.filter((_, idx) => idx !== indexToDelete));
   };
 
+  // Categories for filtering expenses
+
   const categories = [
     { name: 'Search', icon: <FontAwesomeIcon icon={faMagnifyingGlass} /> },
     { name: 'All Expenses', icon: <FontAwesomeIcon icon={faWallet} /> },
