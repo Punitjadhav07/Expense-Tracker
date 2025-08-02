@@ -156,8 +156,3 @@ npm run lint
 - All CSS is organized in `src/css/` for easy maintenance.
 - To add new categories, update the `categoryNames` and `categoryIcons` arrays in `ExpenseMain.jsx`.
 
----
-
-## 📄 License
-
-This project is for educational/demo purposes. Add your own license if needed.
