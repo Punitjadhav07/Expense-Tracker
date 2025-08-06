@@ -18,7 +18,7 @@ A modern and intuitive expense tracking web application built using **React**. T
 ## 🛠️ Tech Stack
 
 - **React** – Frontend library
-- **JavaScript (ES6+)** – Core logic
+- **JavaScript (ES6+)** – Core logic(functionalty)
 - **HTML/CSS** – Markup & styling
 - **React Hooks** – State and lifecycle management
 - **FontAwesome** – Icons
