@@ -68,9 +68,26 @@ src/
 - On submit, calls `onAddExpense(newExpense)` to update the main list in `ExpenseMain`.
 
 ### EditExpense.jsx
-- Receives `expense` (to edit), `onSave`, and `onClose` from `ExpenseMain`.
-- Loads the selected expense into local form state.
-- On submit, calls `onSave(updatedExpense)` to update the main list in `ExpenseMain`.
+The EditExpense component provides a modal interface to modify an existing expense.
+
+📥 Props Received:
+	•	expense: The specific expense object selected for editing, passed from ExpenseMain.
+	•	onSave(updatedExpense): Callback function triggered after editing; sends the updated expense to ExpenseMain.
+	•	onClose(): Closes the modal without saving any changes.
+
+⚙️ Functionality:
+	•	On mount, it loads the expense prop into local state for form fields (e.g., title, amount, category, and date).
+	•	Uses controlled form inputs to allow smooth editing and validation.
+	•	On form submission:
+	•	Constructs an updatedExpense object with the modified values.
+	•	Calls onSave(updatedExpense) to update the expense list in ExpenseMain.
+	•	Closes the modal via onClose() after successful save.
+	•	On cancel, simply calls onClose() without making any changes.
+
+✅ Highlights:
+	•	Ensures that no edits affect the main state until user confirms.
+	•	Reusable modal UI component, consistent with AddExpense.
+	•	Easy to extend or modify fields for future needs.
 
 ### AddBudget.jsx
 - Receives `onAddBudget` and `onClose` from `ExpenseMain`.
