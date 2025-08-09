@@ -18,7 +18,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import './css/ExpenseMain.css';
-
+// ExpenseMain component to manage the main functionality of the expense tracker application
 export const ExpenseMain = () => {
   // State variables to manage budget, expenses, and UI states
   const [showAddBudget, setShowAddBudget] = useState(false);
