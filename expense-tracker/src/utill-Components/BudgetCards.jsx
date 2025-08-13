@@ -1,6 +1,6 @@
 // BudgetCards.jsx
 // Displays a summary card for budget info (total, spent, remaining). Receives title and value as props from ExpenseMain.
-
+// This component is styled with CSS from BudgetCards.css.
 import React from 'react';
 import '../css/BudgetCards.css';
 
