@@ -1,6 +1,6 @@
 // add budget
 
-
+// added imports
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
