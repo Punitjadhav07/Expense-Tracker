@@ -11,7 +11,7 @@ A modern and intuitive expense tracking web application built using **React**. T
 - 📊 **Visual chart representation** of expenses (placeholder, ready for integration)
 - 💡 **Reusable components** like CategoryCards, BudgetCards, and Chart
 - 💅 Fully responsive and clean UI built with modern CSS
-- ⚡ **Instant updates**: All changes reflect immediately in the UI
+- ⚡ **Instant updates**: All changes reflect immediately in the UI.
 
 ---
 
