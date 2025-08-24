@@ -5,6 +5,7 @@ A modern and intuitive expense tracking web application built using **React**. T
 ---
 
 ## 🚀 Features
+latest features 
 
 - 📌 **Add, edit, and delete expenses** with category, title, date, and amount
 - 🗂️ **Display a list of all expenses** and filter by category
