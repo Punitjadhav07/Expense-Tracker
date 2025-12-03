@@ -10,7 +10,7 @@ const CATEGORY_COLORS = {
   'Other': '#8884d8'
 };
 
-export const Piechart = ({ expenses = [] }) => {
+export const Piechart = ({ expenses = [], selectedCategory = 'All Expenses' }) => {
   // Summing up category-wise totals
   const categoryTotals = expenses.reduce((acc, expense) => {
     const { category, amount } = expense;
@@ -24,6 +24,12 @@ export const Piechart = ({ expenses = [] }) => {
     name,
     value
   }));
+
+  const getCategoryLabel = () => {
+    if (selectedCategory === 'Search') return 'Search';
+    if (selectedCategory === 'All Expenses') return 'All';
+    return selectedCategory;
+  };
 
   return (
     <div style={{ width: '100%', textAlign: 'center' }}>
@@ -68,7 +74,7 @@ export const Piechart = ({ expenses = [] }) => {
             fontWeight: '600',
             color: '#FF8C00'
           }}>
-            All
+            {getCategoryLabel()}
           </div>
         </div>
       )}

@@ -28,7 +28,6 @@ export const ExpenseMain = () => {
     const saved = localStorage.getItem("budget");
     return saved ? parseFloat(saved) : 0;
   });
-  const [budgetAmount, setBudgetAmount] = useState("");
   const [expense, setExpense] = useState(() => {
     const saved = localStorage.getItem("expense");
     return saved ? parseFloat(saved) : 0;
@@ -39,6 +38,8 @@ export const ExpenseMain = () => {
   });
   const [editingExpense, setEditingExpense] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('All Expenses');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showSearchInput, setShowSearchInput] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("budget", budget);
@@ -114,12 +115,21 @@ export const ExpenseMain = () => {
     { name: 'Health', icon: <FontAwesomeIcon icon={faHospital} /> },
   ];
 
-  let filteredExpenses = [];
+  let listExpenses = [];
+  let chartExpenses = [];
 
-  if (selectedCategory === 'All Expenses') {
-    filteredExpenses = expenseList;
+  if (selectedCategory === 'Search') {
+    listExpenses = expenseList.filter(exp =>
+      exp.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    // When searching, show the same filtered data in both list and charts
+    chartExpenses = listExpenses;
+  } else if (selectedCategory === 'All Expenses') {
+    listExpenses = expenseList;
+    chartExpenses = expenseList;
   } else {
-    filteredExpenses = expenseList.filter(exp => exp.category === selectedCategory);
+    listExpenses = expenseList.filter(exp => exp.category === selectedCategory);
+    chartExpenses = expenseList.filter(exp => exp.category === selectedCategory);
   }
 
   return (
@@ -140,21 +150,47 @@ export const ExpenseMain = () => {
             key={name}
             category={<>{icon} {name}</>}
             isSelected={selectedCategory === name}
-            onClick={() => setSelectedCategory(name)}
+            onClick={() => {
+              setSelectedCategory(name);
+              if (name === 'Search') {
+                setShowSearchInput(true);
+              } else {
+                setShowSearchInput(false);
+                setSearchQuery('');
+              }
+            }}
           />
         ))}
         <ButtonCards operation="Add Budget" onClick={handleOperationClick} />
         <ButtonCards operation="Add Expense" onClick={handleOperationClick} />
       </div>
 
+      {showSearchInput && selectedCategory === 'Search' && (
+        <div className="expenseMain-searchContainer" style={{ padding: '10px 20px', marginBottom: '10px' }}>
+          <input
+            type="text"
+            placeholder="Search expenses by title..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{
+              width: '100%',
+              padding: '8px 12px',
+              borderRadius: '4px',
+              border: '1px solid #ddd',
+              fontSize: '14px'
+            }}
+          />
+        </div>
+      )}
+
       <div className="expenseManagement expenseMain-expenseManagement">
         <div className="expenseChart expenseMain-expenseChart">
-          <Chart expenses={expenseList} />
+          <Chart expenses={chartExpenses} selectedCategory={selectedCategory} />
         </div>
 
         <div className="expenseList expenseMain-expenseList">
           <List
-            expenses={filteredExpenses}
+            expenses={listExpenses}
             onEdit={handleEditExpense}
             onDelete={handleDeleteExpense}
           />
